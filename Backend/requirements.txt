@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+supabase
+openai
+flask
+flask-socketio
+eventlet
+websockets>=11.0,<16
