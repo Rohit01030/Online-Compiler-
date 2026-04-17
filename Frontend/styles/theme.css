@@ -1,0 +1,193 @@
+/* Global Theme Variables and Styles */
+
+/* Dark Theme (Default) */
+:root {
+  /* Background Colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  
+  /* Text Colors */
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  
+  /* Border and Accent Colors */
+  --border-color: #334155;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-bg: #10b981;
+  --accent-bg-hover: #059669;
+  
+  /* Editor Theme */
+  --editor-theme: vs-dark;
+  --editor-bg: #0f172a;
+  
+  /* Error and Status Colors */
+  --error-color: #fca5a5;
+  --error-light: #fecaca;
+  --success-color: #86efac;
+  
+  /* Smooth Transition */
+  --transition-speed: 0.3s;
+  --transition: background-color var(--transition-speed) ease, 
+                color var(--transition-speed) ease, 
+                border-color var(--transition-speed) ease;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #eeeeee;
+  
+  /* Text Colors */
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-tertiary: #666666;
+  
+  /* Border and Accent Colors */
+  --border-color: #cbd5e1;
+  --accent-color: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-bg: #06b6d4;
+  --accent-bg-hover: #0891b2;
+  
+  /* Editor Theme */
+  --editor-theme: vs;
+  --editor-bg: #ffffff;
+  
+  /* Error and Status Colors */
+  --error-color: #dc2626;
+  --error-light: #fee2e2;
+  --success-color: #16a34a;
+}
+
+/* Base Styles with Theme Support */
+* {
+  transition: var(--transition);
+}
+
+body,
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
+}
+
+/* Button Styles */
+button {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Primary Action Button */
+.btn-primary {
+  background-color: var(--accent-bg);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-bg-hover);
+}
+
+/* Input Styles */
+input,
+textarea {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  background-color: var(--bg-secondary);
+}
+
+/* Tab Styles */
+.tab {
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+/* Panel Styles */
+.panel {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+/* Error Display */
+.error-text {
+  color: var(--error-color);
+}
+
+/* Success Display */
+.success-text {
+  color: var(--success-color);
+}
+
+/* Code Block */
+pre {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  transition: var(--transition);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
